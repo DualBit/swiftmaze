@@ -207,7 +207,7 @@ class Eller: Algorithm {
             for index in 0..<numDoors {
                 let cell = randomlySortedCells[index]
                 
-                if let nextCell = grid.cellToTheRight(of: cell), let currentSet = state.setOfCell[cell], let doorIndex = column.index(of: cell) {
+                if let nextCell = grid.cellToTheRight(of: cell), let currentSet = state.setOfCell[cell], let doorIndex = column.firstIndex(of: cell) {
                     
                     nextState.add(cell: nextCell, to: currentSet)
                     

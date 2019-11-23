@@ -126,7 +126,7 @@ class Grid {
             let end = Point(xPos, yPos + 1)
             let lineToFind = Line(start :start, end: end)
             
-            if let indexOfLineToFind = verticalLines.index(where: { $0 == lineToFind }) {
+            if let indexOfLineToFind = verticalLines.firstIndex(where: { $0 == lineToFind }) {
                 
                 return indexOfLineToFind
             }
@@ -140,7 +140,7 @@ class Grid {
             let end = Point(xPos + 1, yPos)
             let lineToFind = Line(start :start, end: end)
             
-            if let indexOfLineToFind = horizontalLines.index(where: { $0 == lineToFind }) {
+            if let indexOfLineToFind = horizontalLines.firstIndex(where: { $0 == lineToFind }) {
                 
                 return indexOfLineToFind
             }

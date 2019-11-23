@@ -24,15 +24,15 @@ class ViewController: NSViewController, MazePickerViewControllerDelegate {
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        let sheet = storyboard?.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "mazePicker")) as! MazePickerViewController
+        let sheet = storyboard?.instantiateController(withIdentifier: "mazePicker") as! MazePickerViewController
         sheet.delegate = self
         sheet.create(with: MazeSetup.load())
         
-        presentViewControllerAsSheet(sheet)
+        presentAsSheet(sheet)
     }
     
     func mazePicker(controller: MazePickerViewController, didPickMazeSetup setup: MazeSetup) {
-        dismissViewController(controller)
+        dismiss(controller)
         coordinator = MazeCoordinator(maze: mazeView, setup: setup)
         startButton.title = "Start"
         
@@ -64,11 +64,11 @@ class ViewController: NSViewController, MazePickerViewControllerDelegate {
             
             self.coordinator?.dropMaze()
             
-            let sheet = storyboard?.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "mazePicker")) as! MazePickerViewController
+            let sheet = storyboard?.instantiateController(withIdentifier: "mazePicker") as! MazePickerViewController
             sheet.delegate = self
             sheet.create(with: MazeSetup.load())
             
-            presentViewControllerAsSheet(sheet)
+            presentAsSheet(sheet)
         }
         else {
             sender.title = "New"

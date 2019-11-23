@@ -62,7 +62,7 @@ class Tremaux: Algorithm {
                     activeJunctions.removeLast()
                 }
                 
-                if let cutOffIndex = activeCells.index(where: { $0 == lastJunctionCell }) {
+                if let cutOffIndex = activeCells.firstIndex(where: { $0 == lastJunctionCell }) {
                     
                     activeCells = Array(activeCells[0..<(cutOffIndex + 1)])
                 }

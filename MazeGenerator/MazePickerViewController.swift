@@ -60,7 +60,7 @@ class MazePickerViewController: NSViewController, NSTextFieldDelegate {
             return
         }
         
-        guard let generatorIndex = generators.index(of: setup.generator), let solverIndex = solvers.index(of: setup.solver) else {
+        guard let generatorIndex = generators.firstIndex(of: setup.generator), let solverIndex = solvers.firstIndex(of: setup.solver) else {
             return
         }
         

@@ -23,7 +23,7 @@ extension MutableCollection where Index == Int {
     mutating func shuffled() {
         // empty and single-element collections don't shuffle
         if count < 2 { return }
-        let countInt = count as! Int
+        let countInt = count 
         
         for i in 0..<countInt - 1 {
             let j = Int(arc4random_uniform(UInt32(countInt - i))) + i
